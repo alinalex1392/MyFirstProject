@@ -1,18 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <modelVersion>4.0.0</modelVersion>
-    <groupId>myWebApp</groupId>
-    <artifactId>myWebApp</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
-    <name>My Spring MVC Application</name>
+<groupId>myWebApp</groupId>
+<artifactId>myWebApp</artifactId>
+<version>1.0-SNAPSHOT</version>
+<packaging>war</packaging>
+<name>My Spring MVC Application</name>
 
     <properties>
-    <org.springframework.version>3.1.0.RELEASE</org.springframework.version>
+    <org.springframework.version>4.2.3.RELEASE</org.springframework.version>
+    <spring.batch.version>3.0.5.RELEASE</spring.batch.version>
+    <spring.jdbc.version>4.0.5.RELEASE</spring.jdbc.version>
+    <spring.oxm.version>4.0.5.RELEASE</spring.oxm.version>
+    <commons.version>1.4</commons.version>
+    <hsql.version>1.8.0.7</hsql.version>
+    <junit.version>4.12</junit.version>
 </properties>
 
 
 <dependencies>
+    <!--running with Spring MVC-->
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
@@ -32,6 +39,39 @@
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
         <version>1.2.17</version>
+    </dependency>
+
+    <!--Running with Spring Batch-->
+
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-oxm</artifactId>
+        <version>${spring.oxm.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.jdbc.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>commons-dbcp</groupId>
+        <artifactId>commons-dbcp</artifactId>
+        <version>${commons.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>hsqldb</groupId>
+        <artifactId>hsqldb</artifactId>
+        <version>${hsql.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.batch</groupId>
+        <artifactId>spring-batch-test</artifactId>
+        <version>${spring.batch.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
     </dependency>
 </dependencies>
 
